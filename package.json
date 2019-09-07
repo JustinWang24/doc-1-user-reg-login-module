@@ -1,0 +1,12 @@
+{
+  "name": "1-user-reg-login-module",
+  "version": "0.0.1",
+  "description": "User registration and login module",
+  "main": "index.js",
+  "author": "Justin Wang",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  }
+}
