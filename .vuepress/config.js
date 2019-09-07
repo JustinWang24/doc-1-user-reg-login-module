@@ -15,6 +15,9 @@ module.exports = {
             },
             {
                 text: '功能测试', link:'/unit_tests/'
+            },
+            {
+                text: '业务逻辑的实现', link:'/business_logic/'
             }
         ],
         // 侧边栏

@@ -24,6 +24,8 @@ php73 migrations/create_tables.php dev
 php73 migrations/database_seeder.php dev ## 创建 15 万条学生数据, 阶段 1
 ```
 
+或
+
 ```bash
 php73 migrations/database_seeder_huge.php dev ## 创建 120 万条学生数据, 阶段 2
 ```
@@ -59,6 +61,10 @@ php73 migrations/database_seeder_huge.php dev ## 创建 120 万条学生数据, 
 - created_at:
 
 ### 学生详细信息表  student_profiles
+
+::: warning
+TBD 需要最终完成设计
+:::
 
 - id:
 - uuid:
@@ -169,9 +175,10 @@ php73 migrations/database_seeder_huge.php dev ## 创建 120 万条学生数据, 
 ### 系统任务表 jobs
 
 - id:
-- uuid:
+- uuid: 对外可公开的 job 的唯一标识
 - type:
 - payload_data: 对应需要放入到队列中的相关原数据, json 格式的字符串
 - complete: boolean, true 表示完成, false 表示等待中
+- result: job 的执行结果描述
 - created_at:
 - updated_at:
