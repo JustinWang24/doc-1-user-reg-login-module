@@ -2,6 +2,32 @@
 
 本模块的数据将主要围绕系统的用户, 学校及其相关子系统之间的关系展开.
 
+## 数据库管理
+
+处于安全考虑, 除超级管理员外, 类似 Laravel 框架, 我司不允许直接链接数据库进行编辑任何表结构与数据, 也不会提供外部访问的机制来访问数据库服务器. 任何针对数据的修改, 只能通过本模块提供的脚本程序来执行.
+
+### 准备工作
+
+由于基于命令行的方式, 加载 Yaf 框架不太方便, 因此对于在开发期间, 使用 migration 工具, 需要找到 `migrations/get_db_connection.example.php` 文件, 拷贝其中内容, 然后在本地生成每个人自己的 `migrations/get_db_connection.php`文件. 该文件被用来在命令行方式下, 正常的获取数据库链接供之后操作数据库时使用.
+
+### 在本地开发环境创建所有数据库表
+
+```bash
+php73 migrations/create_tables.php dev
+```
+
+### 在本地开发环境生成测试数据
+
+开发人员可根据需求, 按以下的命令, 来生成不同规模的数据
+
+```bash
+php73 migrations/database_seeder.php dev ## 创建 15 万条学生数据, 阶段 1
+```
+
+```bash
+php73 migrations/database_seeder_huge.php dev ## 创建 120 万条学生数据, 阶段 2
+```
+
 ## 用户模块
 
 ### 用户表 users: models\User.php
