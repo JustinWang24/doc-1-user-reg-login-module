@@ -43,7 +43,7 @@ make install
   - 进入yaf源码目录 运行 phpize (注意: 如果php 不是通过源码安装的, 那么可能没有phpize命令， 需要通过 sudo apt install php7.2-dev命令进行安装即可)
   - 运行 ./configure - -with-php-config=WHERE_php-config_IS
   - make && make install
-  - php.ini 文件中引入 yaf 模块
+  - php.ini 文件中引入 yaf 模块 hahahah
 
 ### Nginx 服务器, PHP-FPM 的启动和配置
 
