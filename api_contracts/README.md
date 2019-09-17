@@ -335,22 +335,39 @@
 }
 ```
 
-### 云班牌 学校
+### 云班牌 学校  /api/cloud/getSchoolInfo
 
 展示云班牌上的学校信息 学校名称,学校LOGO,校训,轮播视频
 
-#### 云班牌 学校
+#### 1: 请求参数
+
+| 参数名        | 是否必须        | 参数类型 | 说明
+| ------------- | :-------------: | -----:   | -----: 
+| code          | Yes             | String   | 云班牌设备码
+
+
+#### 响应数据: json 格式
 
 ```json
 {
     "code":1000,
     "msg" :"",
     "data": {
-        "school_name"  : "学校名称", // 学校名称
-        "school_img"   : "学校LOGO", // 学校LOGO
-        "school_name"  : "学校名称",// 学校名称
-        "school_motto" : "校训",  // 校训
-        "school_video" : "轮播视频" // 轮播视频
+        "school": {
+            "name": "枣庄职业学院",
+            "motto": "自强不息,厚德载物",
+            "logo": {
+                "path": "/aliyunoss/3/07/20190828/4_0_20190828094851_9711.png",
+                "size": "",
+                "type": ""
+            }
+        },
+        "area": {
+            "video": "/xxx/xxx/xxx",
+            "size": "",
+            "type": ""
+        }
+    },
     }
 }
 ```
