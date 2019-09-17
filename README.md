@@ -59,6 +59,37 @@ make install
 
 - phpstorm 的 yaf [框架代码提示工具](https://github.com/elad-yosifon/php-yaf-doc)
 
+### 安装 PHP SeasLog 扩展
+
+- 为了获得最佳的性能, 我们使用 SeasLog 扩展作为日志工具
+- [下载源码 2.0.2 版](http://pecl.php.net/get/SeasLog-2.0.2.tgz)
+- 从源码安装
+
+```bash
+phpize73
+./configure --with-php-config=/home/vagrant/softwares/php73/bin/php-config
+make && make install
+```
+
+### 在必要的时候, 安装 PHP redis 扩展
+
+- [下载源码 5.0.2 版](http://pecl.php.net/get/redis-5.0.2.tgz)
+- 从源码安装
+  
+```bash
+phpize73
+
+# 可选参数 --enable-redis-igbinary 使用 igbinary 来序列化存储数据
+# 可选参数 --enable-redis-msgpack 使用 msgpack 来序列化存储数据 (需要  php-msgpack >= 2.0.3)
+# 可选参数 --enable-redis-lzf 在存储到 Redis 之前用 lzf 压缩数据
+# 可选参数 --with-liblzf 预安装 lzf 库到系统中
+./configure --with-php-config=/home/vagrant/softwares/php73/bin/php-config
+
+make && make install
+```
+
+- 通过 phpinfo() 来查看, 确保 redis 被 php-fpm 和 php cli 加载了
+
 ### 应用程序配置文件
 
 `/conf/application.ini` 文件是应用的基础配置文件. 由于本模块功能比较单一, 因此只有一个配置文件.
