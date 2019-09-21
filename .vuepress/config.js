@@ -8,6 +8,9 @@ module.exports = {
         nav: [
             {text: '首页', link: '/'},
             {
+                text: '搭建开发环境',link: '/setup/'
+            },
+            {
                 text: '接口设计',link: '/api_contracts/'
             },
             {
