@@ -69,6 +69,24 @@ phpize73
 make && make install
 ```
 
+### 安装 PHP Uuid 扩展
+
+- 为了获得最佳的性能, 我们使用 `PHP-UUID` 扩展作为生成 uuid 的工具
+- [下载源码 1.0.4 版](https://pecl.php.net/get/uuid-1.0.4.tgz)
+- 该扩展在 Ubuntu 系统中依赖 `libuuid`, 如果还没有安装, 则运行 `sudo apt install uuid-dev` 进行安装
+- 从源码安装
+
+```bash
+phpize73
+./configure --with-php-config=/home/vagrant/softwares/php73/bin/php-config
+make && make install
+```
+
+```php
+# 高效的生成 uuid 的帮助方法
+$uuid = uuid_create(UUID_TYPE_RANDOM);
+```
+
 ### 在必要的时候, 安装 PHP redis 扩展
 
 - [下载源码 5.0.2 版](http://pecl.php.net/get/redis-5.0.2.tgz)

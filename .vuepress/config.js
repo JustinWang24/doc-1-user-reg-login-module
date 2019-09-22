@@ -17,7 +17,7 @@ module.exports = {
                 text: '数据库设计',link: '/database/'
             },
             {
-                text: '功能测试', link:'/unit_tests/'
+                text: '功能测试与性能优化', link:'/unit_tests/'
             },
             {
                 text: '业务逻辑的实现', link:'/business_logic/'
